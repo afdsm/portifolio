@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta Veterinária</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(fundo5.png);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 590px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #53bfbf;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #53bfbf;
+        }
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #53bfbf;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            color: #333;
+            outline: none;
+        }
+        .input-field:focus {
+            border-color: #333;
+        }
+        button {
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            padding: 0.7em 2em;
+            border: 3px solid #53bfbf;
+            border-radius: 2px;
+            position: relative;
+            color: black;
+            background-color: white;
+            transition: 0.3s ease all;
+            z-index: 1;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            background-color: #53bfbf;
+            z-index: -1;
+            transition: 0.5s all ease;
+            opacity: 0;
+        }
+
+        button:hover {
+            color: white;
+        }
+
+        button:hover::before {
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .input-field {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agende a Consulta do Seu Pet</h1>
+        <h2>Preencha as informações abaixo</h2>
+        <form id="agendamento-form">
+            <label for="consulta" style="font-size: 1.2rem;">Selecione a Especialidade:</label>
+            <select id="consulta" name="consulta" class="input-field" required>
+                <option value="">Escolha a especialidade...</option>
+                <option value="Veterinário Geral">Veterinário Geral</option>
+                <option value="Dermatologia Veterinária">Dermatologia Veterinária</option>
+                <option value="Cardiologia Veterinária">Cardiologia Veterinária</option>
+                <option value="Oftalmologia Veterinária">Oftalmologia Veterinária</option>
+                <option value="Ortopedia Veterinária">Ortopedia Veterinária</option>
+                <option value="Nutrição Veterinária">Nutrição Veterinária</option>
+            </select>
+
+            <label for="data" style="font-size: 1.2rem;">Data da Consulta:</label>
+            <input type="date" id="data" name="data" class="input-field" required>
+
+            <label for="hora" style="font-size: 1.2rem;">Hora da Consulta:</label>
+            <input type="time" id="hora" name="hora" class="input-field" required>
+            <button type="submit">Agendar Consulta</button>
+        </form>
+        <footer>
+            <p>© Clinic Pets - <a href="sobre.html">www.clinicpets.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('agendamento-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            alert('Consulta agendada com sucesso!');
+        });
+    </script>
+
+</body>
+</html>

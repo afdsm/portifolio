@@ -1,0 +1,158 @@
+<style>
+    body {
+        background-image: url(fundo5.png);
+    }
+
+    .contact {
+        background: #53bfbf;
+        padding: 50px 20px;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px white;
+    }
+
+    .contact h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+        color: white;
+    }
+
+    .contact .logo {
+        width: 200px;  
+        height: auto;
+        border-radius: 100%;
+    }
+
+    .contact form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 500;
+        color: white;
+        text-shadow: none;
+        background: transparent;
+        cursor: pointer;
+        box-shadow: transparent;
+        border: 1px solid white;
+        transition: 0.5s ease;
+        user-select: none;
+    }
+
+    .contact button:hover {
+        background-color: white;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        position: relative;
+        color: white;
+    }
+
+    .container .label {
+        font-size: 15px;
+        padding-left: 10px;
+        position: absolute;
+        top: 13px;
+        transition: 0.3s;
+        pointer-events: none;
+        font-size: 20px;
+    }
+
+    .input {
+        width: 700px;
+        height: 45px;
+        border: none;
+        outline: none;
+        padding: 0px 7px;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 20px;
+        background-color: transparent;
+        box-shadow: 3px 3px 10px white, -1px -1px 6px white;
+    }
+
+    .input:focus {
+        border: 2px solid transparent;
+        color: #fff;
+        box-shadow: 3px 3px 10px white,
+                    -1px -1px 6px white,
+                    inset 3px 3px 10px white,
+                    inset -1px -1px 6px white;
+    }
+
+    .container .input:valid ~ .label,
+    .container .input:focus ~ .label {
+        transition: 0.3s;
+        padding-left: 2px;
+        transform: translateY(-35px);
+    }
+
+    .container .input:valid,
+    .container .input:focus {
+        box-shadow: 3px 3px 10px white,
+                    -1px -1px 6px white,
+                    inset 3px 3px 10px white,
+                    inset -1px -1px 6px white;
+    }
+
+    @media (max-width: 768px) {
+        .contact h2 {
+            font-size: 2.5rem;
+        }
+
+        .contact input,
+        .contact textarea {
+            font-size: 1rem;
+        }
+
+        .contact button {
+            font-size: 1rem;
+        }
+    }
+
+    .contact p {
+        color: white;
+        font-size: large;
+    }
+
+    .contact button {
+        color: white;
+    }
+</style>
+
+<section id="contact" class="contact">
+    <img src="logo.png" alt="Logo Clinic Pets" class="logo">
+
+    <h2>Entre em contato</h2>
+    <br><br>
+    <form action="#" method="post">
+        <div class="container">
+            <input required type="text" name="text" class="input">
+            <label class="label">Seu nome:</label>
+        </div>
+        <br><br>
+        <div class="container">
+            <input required type="text" name="text" class="input">
+            <label class="label">Seu email:</label>
+        </div>
+        <br><br>
+        <div class="container">
+            <input required type="text" name="text" class="input">
+            <label class="label">Qual sua dúvida?</label>
+        </div>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
